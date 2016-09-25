@@ -19,7 +19,6 @@ Usage
 
 .. code-block:: python
 
-    import datetime
     from sqloose import sqloose
 
     sql = sqloose.to_sql("SELECT age, race, gender, count(*) AS num FROM stats GROUP BY [1:3] ORDER BY -1 DESC")
@@ -34,20 +33,23 @@ item + 1.
 
 Take the following SQL statement:
 
-SELECT age, race, gender, count(*) AS num FROM stats GROUP BY 1,2,3 ORDER BY 4 DESC
+.. code-block:: sql
+    SELECT age, race, gender, count(*) AS num FROM stats GROUP BY 1,2,3 ORDER BY 4 DESC
 
 In sqloose this can be represented many ways, such as:
 
-SELECT age, race, gender, count(*) AS num FROM stats GROUP BY [1:3] ORDER BY -1 DESC
-SELECT age, race, gender, count(*) AS num FROM stats GROUP BY [:3] ORDER BY -1 DESC
-SELECT age, race, gender, count(*) AS num FROM stats GROUP BY [:-2] ORDER BY -1 DESC
+.. code-block:: sql
+    SELECT age, race, gender, count(*) AS num FROM stats GROUP BY [1:3] ORDER BY -1 DESC
+    SELECT age, race, gender, count(*) AS num FROM stats GROUP BY [:3] ORDER BY -1 DESC
+    SELECT age, race, gender, count(*) AS num FROM stats GROUP BY [:-2] ORDER BY -1 DESC
 
 Further, sqloose defines the GROUP TO and GROUP THROUGH constructs, which can be used in the same
 scenario:
 
-SELECT age, race, gender, count(*) AS num FROM stats GROUP TO -1 ORDER BY -1 DESC
-SELECT age, race, gender, count(*) AS num FROM stats GROUP TO 4 ORDER BY -1 DESC
-SELECT age, race, gender, count(*) AS num FROM stats GROUP THROUGH 3 ORDER BY -1 DESC
+.. code-block:: sql
+    SELECT age, race, gender, count(*) AS num FROM stats GROUP TO -1 ORDER BY -1 DESC
+    SELECT age, race, gender, count(*) AS num FROM stats GROUP TO 4 ORDER BY -1 DESC
+    SELECT age, race, gender, count(*) AS num FROM stats GROUP THROUGH 3 ORDER BY -1 DESC
 
 sqloose does not validate the correctness of your SQL, but does validate the correctness of the
 constructs that are specific to sqloose, including the ranges and use of GROUP TO and GROUP
