@@ -1,5 +1,6 @@
+==============
 python-sqloose
-================
+==============
 
 **Note: This is a pre-release version. I'm taking more time to decide if I want to change the
 interface**
@@ -74,6 +75,6 @@ Changelog
 ---------
 
 0.1.0a1
-*******
+-------
 
 * Prerelease

@@ -20,7 +20,9 @@ test_requirements = [
 setup(
     name='sqloose',
     version='0.1.0',
-    description="sqloose something",
+    description="""sqloose is a SQL-like query language that maps directly to SQL. sqloose is designed as a less rigid
+    SQL, offering a more convenient syntax. In particular, it allows ranges and negative indices to be used in GROUP BY
+    and ORDER BY statements.""",
     long_description=readme + '\n\n' + history,
     author="rdj",
     author_email='fumble.to.victory@gmail.com',
