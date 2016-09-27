@@ -14,9 +14,6 @@ requirements = [
     'docopt',
 ]
 
-test_requirements = [
-]
-
 setup(
     name='sqloose',
     version='0.1.0',
@@ -56,5 +53,5 @@ setup(
         'Programming Language :: Python :: 3.5',
     ],
     test_suite='tests',
-    tests_require=test_requirements
+    tests_require=requirements
 )
