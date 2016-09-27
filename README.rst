@@ -28,8 +28,8 @@ Use Case
 
 sqloose is designed as a less rigid SQL, offering a more convenient syntax. In particular, it
 allows ranges and negative indices to be used in GROUP BY and ORDER BY statements. The right index
-in the range specifies the final item. This is unlike Python where the right index is the final
-item + 1.
+in the range specifies the final item, unlike Python in which the right index is the final item +
+1.
 
 Take the following SQL statement:
 
@@ -53,6 +53,13 @@ scenario:
     SELECT age, race, gender, count(*) AS num FROM stats GROUP TO -1 ORDER BY -1 DESC
     SELECT age, race, gender, count(*) AS num FROM stats GROUP TO 4 ORDER BY -1 DESC
     SELECT age, race, gender, count(*) AS num FROM stats GROUP THROUGH 3 ORDER BY -1 DESC
+
+SQL is often used in an interactive fashion, where data is being explored rather than simply being
+gathered. Queries are discovered, rather than being innately known. The pattern usually involves
+looking at aggregates (counts, sums, means), while changing both the selection of columns and the
+depth to find the most meaningful insights. The frustration in using this pattern is that we often
+must change the start of the query (the column list) and also the near end (the grouping indices).
+This can be made largely unnecessary by expanding SQL syntax to be more expressive.
 
 sqloose does not validate the correctness of your SQL, but does validate the correctness of the
 constructs that are specific to sqloose, including the ranges and use of GROUP TO and GROUP
