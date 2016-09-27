@@ -17,7 +17,7 @@ requirements = [
 setup(
     name='sqloose',
     version='0.1.0',
-    description="sqloose is a less rigid SQL that allows ranges and negative indices." 
+    description="sqloose is a less rigid SQL that allows ranges and negative indices.", 
     long_description=readme + '\n\n' + history,
     author="rdj",
     author_email='fumble.to.victory@gmail.com',
